@@ -1,13 +1,14 @@
 import { useState } from "react";
-import { GetListComics } from "./services/comic-service";
-import "./App.css";
+import ComicsList from "./components/ComicsList";
+import "./styles/App.css";
 
 function App() {
   const [count, setCount] = useState(0);
-  GetListComics().then((res) => {
-    console.log(res.data.results);
-  });
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <ComicsList />
+    </div>
+  );
 }
 
 export default App;
