@@ -1,13 +1,18 @@
-import { useState } from "react";
-import ComicsList from "./components/ComicsList";
+import ComicsGrid from "./components/ComicsGrid";
+import NavBar from "./components/NavBar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
   return (
-    <div className="App">
-      <ComicsList />
-    </div>
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<ComicsGrid />} />
+        <Route path="/list" />
+        <Route path="/details/:id" />
+      </Routes>
+    </Router>
   );
 }
 
