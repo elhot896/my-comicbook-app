@@ -6,4 +6,8 @@ const GetListComics = () => {
   return axios.get(`${apiUrl}/comics`);
 };
 
-export { GetListComics };
+const GetComicDetails = (id) => {
+  return axios.get(`${apiUrl}/comic/${id}`);
+};
+
+export { GetListComics, GetComicDetails };
